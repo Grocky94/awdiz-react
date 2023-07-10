@@ -1,0 +1,17 @@
+.active {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.inactive {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: not-allowed;
+}
