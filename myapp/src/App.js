@@ -28,22 +28,26 @@ import FromSingleState from './components/08-07-23/FromSingleState';
 import UseCallBack from './components/08-07-23/UseCallBack';
 import UseMemo from './components/09-07-23/UseMemo';
 import UseReducer from './components/09-07-23/UseReducer';
+import ProductFromBackend from './components/10-07-23/ProductFromBackend';
+import MultipleProductToSingle from "./components/10-07-23/MultipleProductToSingle"
 function App() {
   const [myUser, setMyUser] = useState(["Rocky", "Santosh", "Pooja"])
   return (
     <div>
       <Navbar />
       <Routes>
-        <Route eaxct path="/useReducer" element={<UseReducer/>}/>
-        <Route exact path="/useMemo" element={<UseMemo/>}/>
-        <Route exact path="/useCallBack" element={<UseCallBack/>}/>
-        <Route exact path='/from-single-state' element={<FromSingleState/>}/>
-        <Route exact path='/formOne' element={<FormOne/>}/>
-        <Route exact path="/dynamic-styling" element={<DynamicStyling/>}/>
-        <Route exact path='/dynamic-classes' element={<DynamicClases/>}/>
-        <Route exact path="/childrenProp" element={<ChildrenProp/>}/>
+        <Route exact path="multipleProductToSingle/:id" element={<MultipleProductToSingle />} />
+        <Route exact path="/productFromBackend" element={<ProductFromBackend />} />
+        <Route eaxct path="/useReducer" element={<UseReducer />} />
+        <Route exact path="/useMemo" element={<UseMemo />} />
+        <Route exact path="/useCallBack" element={<UseCallBack />} />
+        <Route exact path='/from-single-state' element={<FromSingleState />} />
+        <Route exact path='/formOne' element={<FormOne />} />
+        <Route exact path="/dynamic-styling" element={<DynamicStyling />} />
+        <Route exact path='/dynamic-classes' element={<DynamicClases />} />
+        <Route exact path="/childrenProp" element={<ChildrenProp />} />
         <Route exact path="/xyz" element={<Xyz />} />
-        <Route exact path='/new-single-product/:id' element={<NewSingleProduct/>}/>
+        <Route exact path='/new-single-product/:id' element={<NewSingleProduct />} />
         <Route exact path='/declerative-way' element={<DeclerativeWay />} />
         <Route exact path="/map" element={<Map myUser={myUser} myName={'Rocky'} setMyUser={setMyUser} user={["Naval", "Swaraj", "Ajit"]} />} />
         <Route exact path="/params" element={<Params />} />

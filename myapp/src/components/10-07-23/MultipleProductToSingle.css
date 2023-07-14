@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+#multiple-parent{
+    /* height: 80vh; */
+    width: 80%;
+    margin: auto;
+    /* border: 1px solid #000; */
+    display: flex;
+    justify-content: space-around;
+}
+#left-side{
+    /* height:80vh; */
+    width: 50%;
+    border: 1px solid #000;
+    border-radius: 20px;
+}
+#left-side-top{
+    /* height: 40vh; */
+    width: 100%;
+    /* border: 1px solid #000; */
+    display: flex;
+    margin-top: 5%;
+    justify-content: space-around;
+}
+#left-side-top-1{
+    height:40vh;
+    width: 45%;
+    border-radius: 20px;
+    /* border: 1px solid #000; */
+    display: flex;
+    justify-content: center;
+}
+#left-side-top-2{
+    height:40vh;
+    width: 45%;
+    border-radius: 20px;
+    /* border: 1px solid #000; */
+    display: flex;
+    justify-content: center;
+}
+#left-side-top-1>img{
+    width: 60%;
+    object-fit:scale-down;
+}
+#left-side-top-2>img{
+    width: 80%;
+    object-fit: fill;
+}
+#left-side-down{
+    /* height: 30vh; */
+    width: 100%;
+    /* border: 1px solid #000; */
+    display: flex;
+    justify-content: space-around;
+}
+#left-side-down-1,#left-side-down-2,#left-side-down-3{
+    height:30vh;
+    width: 30%;
+    border-radius: 20px;
+    margin-top: 5%;
+    /* border: 1px solid #000; */
+    display: flex;
+    justify-content: center;
+}
+#left-side-down-1>img{
+    width: 60%;
+    object-fit: cover;
+    margin: auto;
+}
+#left-side-down-2>img{
+    width: 45%;
+    object-fit: cover;
+    margin: auto;
+}
+#left-side-down-3>img{
+    width: 80%;
+    object-fit: cover;
+    margin: auto;
+}
+#right-side{
+    height:80vh;
+    width: 40%;
+    /* border: 1px solid #000; */
+    background-color: #363377;
+    border-radius: 10px;
+}
+#product-title{
+    color:#C9C0C0;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+#product-details-parent{
+    width:100%;
+    background-color: #595594;
+    margin-top: 10%;
+    /* border: 1px solid #000; */
+    border-radius: 10px;
+    line-break: 5px;
+    
+}
+#product-details{
+    font-style: italic;
+    color: #C9C0C0;
+}
+#price-rate-count{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #C9C0C0;
+    margin-top:15% ;
+    color: #595594;
+    border-radius: 10px;
+}
+#product-hasPrice{
+    /* color: white; */
+    font-size: 1.1em;
+    font-weight: 500;
+}
+#Product-rating{
+    /* color: white; */
+    font-size: 1.1em;
+    font-weight: 500; 
+}
+#Product-count{
+    /* color: white; */
+    font-size: 1.1em;
+    font-weight: 500;  
+}
