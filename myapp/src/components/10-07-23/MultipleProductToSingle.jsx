@@ -1,20 +1,24 @@
 import React from 'react'
 import "./MultipleProductToSingle.css"
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 const MultipleProductToSingle = () => {
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const [currentUserEmail, setCurrentUserEmail] = useState();
   const [Product, setProduct] = useState([])
   const [single, setSingle] = useState({})
+  const [cartCounter, setCartCounter] = useState(0);
   console.log(Product, "single")
   const { id } = useParams();
   console.log(id, "id - here")
-
+  const router = useNavigate();
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then(res => res.json())
       .then(json => setProduct(json));
     // .then(json=>console.log(json))
   }, []);
+
 
 
   useEffect(() => {
@@ -24,6 +28,43 @@ const MultipleProductToSingle = () => {
     }
 
   }, [id, Product])
+
+  useEffect(() => {
+    let user = JSON.parse(localStorage.getItem('Current-User'));
+    console.log(user, 'user');
+    if (user) {
+      setIsUserLoggedIn(true);
+      setCurrentUserEmail(user.email)
+    }
+  })
+  // useEffect(() => {
+  //   setCartCounter(Product.length);
+  // }, [Product]);
+
+
+  function addtocart() {
+    if (isUserLoggedIn) {
+      const users = JSON.parse(localStorage.getItem('Users'))
+      let user = JSON.parse(localStorage.getItem('Current-User'));
+
+      for (let i = 0; i < users.length; i++) {
+        if (users[i].email == user.email) {
+
+          users[i].cart.push(single);
+          localStorage.setItem("Users", JSON.stringify(users));
+          alert("product has been added");
+          router('/cart')
+          break;
+
+        } else {
+          alert("You cant add product before login...")
+
+        }
+
+      }
+
+    }
+  }
 
   console.log(single, "- single here")
   return (
@@ -60,6 +101,7 @@ const MultipleProductToSingle = () => {
             <p id='Product-rating'>Rating: {single.rating?.rate}</p>
             <p id='Product-count'>Count:{single.rating?.count}</p>
           </div>
+          {currentUserEmail ? <button id='add-to-cart' onClick={addtocart}>Add to Cart</button> : ''}
         </div>
       </div>
     </>)

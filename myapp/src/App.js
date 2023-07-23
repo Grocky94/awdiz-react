@@ -30,12 +30,20 @@ import UseMemo from './components/09-07-23/UseMemo';
 import UseReducer from './components/09-07-23/UseReducer';
 import ProductFromBackend from './components/10-07-23/ProductFromBackend';
 import MultipleProductToSingle from "./components/10-07-23/MultipleProductToSingle"
+import Register from './components/15-07-23/Register';
+import Login from './components/15-07-23/Login';
+import Cart from './components/18-07-23/cart';
+import Profile from './components/22-07-23/Profile';
 function App() {
   const [myUser, setMyUser] = useState(["Rocky", "Santosh", "Pooja"])
   return (
     <div>
       <Navbar />
       <Routes>
+        <Route exact path="/profile" element={<Profile/>}/>
+        <Route exact path="/cart" element={<Cart/>}/>
+        <Route exact path="/register" element={<Register />} />
+        <Route exact path="login" element={<Login />} />
         <Route exact path="multipleProductToSingle/:id" element={<MultipleProductToSingle />} />
         <Route exact path="/productFromBackend" element={<ProductFromBackend />} />
         <Route eaxct path="/useReducer" element={<UseReducer />} />

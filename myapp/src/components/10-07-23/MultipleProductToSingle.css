@@ -128,3 +128,12 @@
     font-size: 1.1em;
     font-weight: 500;  
 }
+#add-to-cart{
+    height:5vh;
+    width:90%;
+    background-color: red;
+    color: white;
+    border-radius: 50px;
+    margin-top: 10%;
+    margin-left: 5%;
+}
