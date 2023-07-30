@@ -34,14 +34,16 @@ import Register from './components/15-07-23/Register';
 import Login from './components/15-07-23/Login';
 import Cart from './components/18-07-23/cart';
 import Profile from './components/22-07-23/Profile';
+import Ref from './components/Ref';
 function App() {
   const [myUser, setMyUser] = useState(["Rocky", "Santosh", "Pooja"])
   return (
     <div>
       <Navbar />
       <Routes>
-        <Route exact path="/profile" element={<Profile/>}/>
-        <Route exact path="/cart" element={<Cart/>}/>
+        <Route exact path="/ref" element={<Ref/>}/>
+        <Route exact path="/profile" element={<Profile />} />
+        <Route exact path="/cart" element={<Cart />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="login" element={<Login />} />
         <Route exact path="multipleProductToSingle/:id" element={<MultipleProductToSingle />} />
